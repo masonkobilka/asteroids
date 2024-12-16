@@ -17,9 +17,10 @@ def main():
             if event.type == pygame.QUIT:
                 return
         screen.fill('black')
+        player.update(dt)
         player.draw(screen)
         pygame.display.flip()
-        time_passed = clock.tick(60) / 1000
+        dt = clock.tick(60) / 1000
 
 def game_introduction():
     print("Starting asteroids!")
