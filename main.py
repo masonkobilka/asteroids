@@ -39,6 +39,10 @@ def main():
             if asteroid.check_collision(player):
                 print("Game Over")
                 sys.exit()
+            for shot in SHOTS_GROUP:
+                if asteroid.check_collision(shot):
+                    shot.kill()
+                    asteroid.split()
         for shot in SHOTS_GROUP:
             shot.update(dt)
             shot.draw(screen)
